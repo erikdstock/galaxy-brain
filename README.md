@@ -11,6 +11,28 @@ License: MIT
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
 
+## Docker quickstart
+
+Initial setup:
+```sh
+# Copy .env (modified slightly from default cookiecutter django setup)
+cp .env.example .env
+
+# Build your initial docker compose environment
+docker compose -f local.yml build
+
+# Create admin user
+docker compose -f local.yml run django python manage.py createsuperuser
+```
+
+Thereafter:
+```sh
+docker compose -f local.yml up
+```
+
+Log into admin interface at http://127.0.0.1:8000/admin
+
+
 ## Basic Commands
 
 ### Setting Up Your Users
